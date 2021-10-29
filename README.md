@@ -1,7 +1,7 @@
 #### CRUD
 
 |  Método | Endpoint   | Parâmetros | Descrição  |
-| ------------ | ------------ | ------------ |
+| ------------ | ------------ | ------------ | ------------ |
 | **POST**  | /users/{user_id}/accounts  |   |  Nova Conta |
 | **GET**  | /users/{user_id}/accounts  |   |  Lista Contas |
 | **GET**  | /users/{user_id}/accounts/{account_id}  |   |  Detalhes da Conta |
@@ -21,7 +21,7 @@
 |  Método | Endpoint   | Parâmetros | Descrição  |
 | ------------ | ------------ | ------------ | ------------ |
 | **POST**  | /users/{user_id}/accounts/{account_id}/statement  |  | Lista Transações  |
-| **POST**  | /users/{user_id}/accounts/{account_id}/statement  | start_date (Date) e end_date (Date) | Lista Transações por Período  |
+| **POST**  | /users/{user_id}/accounts/{account_id}/statement  | start_date (YYYY-MM-DD) e end_date (YYYY-MM-DD) | Lista Transações por Período  |
 
 #### BLOQUEIO DA CONTA
 
