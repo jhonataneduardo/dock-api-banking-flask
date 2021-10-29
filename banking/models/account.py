@@ -52,7 +52,7 @@ class Account(db.Model):
     def json(self):
         return {
             'id': self.id,
-            'user_id': self.user_id.id,
+            'user_id': self.user_id,
             'balance': self.balance,
             'withdrawal_limit_day': self.withdrawal_limit_day,
             'active': self.active,

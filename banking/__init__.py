@@ -64,7 +64,7 @@ def create_app():
         AccountBlock,
         '/users/<int:user_id>/accounts/<int:account_id>/block'
     )
-    
+
     return app
 
 

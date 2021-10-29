@@ -1,3 +1,10 @@
+## Start
+
+$ export FLASK_APP=banking
+$ export FLASK_ENV=development
+$ flask run
+
+## Documentação
 #### CRUD
 
 |  Método | Endpoint   | Parâmetros | Descrição  |
