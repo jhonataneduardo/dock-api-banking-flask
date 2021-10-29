@@ -35,6 +35,7 @@ $ flask run
 ```
 #### Docker
 $ docker-compose up
+Acesse: http://localhost:5000
 
 ### Dados de demostração
 **USER (Pessoa)**
