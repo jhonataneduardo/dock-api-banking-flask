@@ -1,11 +1,10 @@
 ## Dock Tech API Flask
-------------
 
-## Pré-resquisitos
+### Pré-resquisitos
 - Python 3.8
 - Docker
 
-## Run
+### Run
 
 #### localhost
 
@@ -21,15 +20,50 @@ $ source venv/bin/activate
 # requirements
 $ pip install -r requirements.txt
 
-# start
+# env
 $ export FLASK_APP=banking
 $ export FLASK_ENV=development
+
+# tests
+$ pytest
+
+# dataload
+$ flask dataload createuser DockTech
+
+# run
 $ flask run
 ```
 #### Docker
+$ docker-compose up
 
+### Dados de demostração
+**USER (Pessoa)**
 
-## Documentação
+```json
+{
+    "id": 1,
+    "name": "DockTech",
+    "cpf": "12345678912",
+    "birth_date": "1991-07-13"
+  }
+```
+
+**ACCOUNT (Conta)**
+
+```json
+{
+    "id": 1,
+    "user_id": 1,
+    "balance": 1080.0,
+    "withdrawal_limit_day": 100.0,
+    "active": true,
+    "type": 1234,
+    "date_created": "2021-10-29"
+  }
+```
+
+### Documentação
+
 #### CRUD
 
 |  Método | Endpoint   | Parâmetros | Descrição  |

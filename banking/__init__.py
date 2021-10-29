@@ -1,11 +1,16 @@
-from config.db import db
+from config.db import db, init_dataload_db
 from config.ma import ma
 
+import click
+
 from flask import Flask
+from flask.cli import AppGroup
 from flask_restful import Api
 
 from banking.resources.account import AccountListCreate, AccountRetrieveUpdateDestroy, AccountBalanceDepositWithdraw, AccountBlock, AccountStatement
 from banking.resources.user import UserListCreate, UserRetrieveUpdateDestroy
+
+from banking.models.user import User as UserModel
 
 
 def create_app():
@@ -68,6 +73,15 @@ def create_app():
     return app
 
 
-# if __name__ == '__main__':
-#     app = create_app()
-#     app.run(debug=True)
+user_cli = AppGroup('dataload')
+
+@user_cli.command('createuser')
+@click.argument('name')
+def dataload(name):
+    import datetime
+    brith_date_datetime = datetime.datetime.strptime('1991-07-13', '%Y-%m-%d')
+    msg = init_dataload_db(app, id=1, name=name, cpf="12345678912", birth_date=brith_date_datetime)
+    print(msg)
+
+app = create_app()
+app.cli.add_command(user_cli)
